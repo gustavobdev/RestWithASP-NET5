@@ -34,47 +34,6 @@ namespace RestWithASP_NET.Controllers
 
 
 
-        [HttpGet("sub/{firstNumber}/{secondNumber}")]
-        public IActionResult Sub(string firstNumber, string secondNumber)
-        {
-            if (IsNumeric(secondNumber) && IsNumeric(firstNumber))
-            {
-                var sun = ConvertToDecimal(firstNumber) - ConvertToDecimal(secondNumber);
-
-                return Ok(sun.ToString());
-            }
-            return BadRequest("Imput inválido");
-        }
-
-
-        [HttpGet("mult/{firstNumber}/{secondNumber}")]
-        public IActionResult Multiplication(string firstNumber, string secondNumber)
-        {
-            if (IsNumeric(secondNumber) && IsNumeric(firstNumber))
-            {
-                var sun = ConvertToDecimal(firstNumber) * ConvertToDecimal(secondNumber);
-
-                return Ok(sun.ToString());
-            }
-            return BadRequest("Imput inválido");
-        }
-
-
-
-
-        [HttpGet("media/{firstNumber}/{secondNumber}")]
-        public IActionResult media(string firstNumber, string secondNumber)
-        {
-            if (IsNumeric(secondNumber) && IsNumeric(firstNumber))
-            {
-                var sun = (ConvertToDecimal(firstNumber) + ConvertToDecimal(secondNumber))/ 2;
-
-                return Ok(sun.ToString());
-            }
-            return BadRequest("Imput inválido");
-        }
-
-
         private bool IsNumeric(string strNumber)
         {
             double number;
